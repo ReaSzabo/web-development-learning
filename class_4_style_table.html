@@ -1,0 +1,91 @@
+
+<!-- THIS IS A COMMENT -->
+
+
+
+<html>
+    <head>
+        <title> 4. lecke </title>
+        <style>
+            h1 {
+                color: blue;
+            }
+            h2 {
+                color: red;
+            }
+            th {
+                color: green;
+            }
+            td {
+                color: grey;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>4. lecke </h1>
+
+        <h2> Table + styles </h2>
+
+        <p> Ma a stílusokról és a táblázatokról beszélünk beszélünk</p>
+
+        <!--
+            A HTML dokumentum minden tag-jének adhatunk egy saját stílust.
+            Ma csak a színeket fogjuk megváltoztatni.
+            Ehhez a <head>-en belül felveszünk egy <style> tag-et.
+            A style tag-en belüli stílus specifikációt CSS-nek nevezzük (Cascading Style Sheets).
+            A stílus deklarálásához leírjuk a tag-et majd kapcsos zárójelen belül megadjuk a stílusjegyeket.
+            Kicsit hasonlít az Object-ekhez.
+        -->
+
+        <!--
+            A táblázathoz tartozó tag-ek:
+            <table> </table>: a táblázat
+            <thead> </thead>: table head, azaz a táblázat felső sora, címsora
+            <th> </th>: table head cell, azaz a táblázat felső sorának egy cellája (az oszlopok címei)
+            <tbody> </tbody>: table body, azaz a táblázat tartalma, a sorait tartalmazó rész
+            <tr> </tr>: table row, azaz a táblázat egy sora
+            <td> </td>: table data cell, azaz a táblázat egy sorának egy cellája
+        -->
+
+        <table>
+            <thead>
+                <th>Név</td>
+                <th>Kor</td>
+                <th>Magasság</td>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Andika</td>
+                    <td>27</td>
+                    <td>167</td>
+                </tr>
+                <tr>
+                    <td>Máté</td>
+                    <td>29</td>
+                    <td>183</td>
+                </tr>
+                <tr>
+                    <td>Csomag</td>
+                    <td>30</td>
+                    <td>189</td>
+                </tr>
+                <tr>
+                    <td>Kóku</td>
+                    <td>29</td>
+                    <td>176</td>
+                </tr>
+                <tr>
+                    <td>Domcsi</td>
+                    <td>25</td>
+                    <td>160</td>
+                </tr>
+                <tr>
+                    <td>Szabi</td>
+                    <td>31</td>
+                    <td>185</td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </body>
+</html>
