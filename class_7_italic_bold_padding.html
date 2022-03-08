@@ -6,10 +6,10 @@
         - font-size
         - font-style
         - font-weight
-    next class:
         - padding
-        - margin
         - background image
+    next class:
+        - margin
         - div - container
 -->
 
@@ -31,8 +31,9 @@
     Kitalálták, hogy 0000000 legyen a kis "a" betű.
     Akkor legyen a 0000001 a kis "b" betű.
     Akkor legyen a 0000010 a kis "c" betű.
-    128 ilyen kombináció létezik, mert 7 "hely" van egy bájtban és minden helyre 2 lehetőség jut. (2 a nyolcadikon = 128).
+    128 ilyen kombináció létezik, mert 7 "hely" van egy bájtban és minden helyre 2 lehetőség jut. (2 a hetediken = 128).
     Ezt nevezzük ASCII (eszki) kódolásnak. (https://hu.wikipedia.org/wiki/ASCII)
+
     Mi a baj?
     Ebbe a 128 kombincióba belefértek a számok, írásjelek és az angol ábécé kis és nagybetűk, de a különböző nyelvek betűi már nem.
     Ekkor elkezdtek más karakterkódolási szabványokat bevezetni egymással párhuzamosan, ezért a weblapoknál, szöveges dokumentumoknál, 
@@ -89,14 +90,41 @@
 
 <!--
     ###### ITALIC ######
-    Magyarul félkövér stílus.
+    Magyarul dőlt stílus.
     Itt is két lehetőség létezik a megvalósításra.
     1. CSS 
     font-style: italic;
     2. <i> tag
-    <p> Mi a jó ég az a <i> Nyerere </i> </p> 
+    <p> Mi a jó ég az a <i> Nyerere </i>? </p> 
 -->
 
+<!--
+    ###### PADDING ######
+    Bélés a HTML elementen belül.
+    Lényegében hagy egy meghatározott peremet a körvonalon belül és csak azon belül kezdi el írni a tartalmat (pl. szöveget).
+    
+    A padding egy CSS attribútum.
+    Megadhatjuk olyan egyszerűen úgy, hogy minden oldalán legyen bélés.
+    padding: 10px;
+
+    Vagy megadhatjuk oldalanként:
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+-->
+
+<!--
+    ####### BACKGROUND IMAGE ##########
+    Háttérképet általában a body-ban állítunk be.
+
+    A CSS attribute így néz ki:
+    background-image: url("hatter.png");
+
+    Vagy ha online adjuk meg az URL-t akkor:
+    background-image: url("https://www.google.com/kep.jpeg")
+
+-->
 
 
 <!DOCTYPE html>
@@ -104,6 +132,9 @@
         <title> 7. lecke </title>
         <meta charset="utf-8"/>
         <style>
+            body {
+                background-image: url("https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+            }
             img {
                 width: 50%;
             }
@@ -118,6 +149,22 @@
             }
             .dolt {
                 font-style: italic;
+            }
+            p {
+                background-color: lightblue;
+                color: black;
+            }
+            .beles {
+                padding: 10px;
+            }
+            .nagy-beles {
+               padding-top: 30px;
+               padding-bottom: 30px;
+               padding-left: 30px;
+               padding-right: 30px;
+            }
+            td {
+                padding: 30px;
             }
         </style>
     </head>
@@ -142,11 +189,16 @@
         
         <p> Az utolsó szó <i> eldűlt. </i> </p> 
         <p class="dolt">Nekem mekegsz?</p>
+        
+        <br>
+        <p>Sima bekezdés</p>
+        <p class="beles">Béléses bekezdés</p>
+        <p class="nagy-beles">NAGY béléses bekezdés</p>
 
         <table>
             <tbody>
                 <tr>
-                    <td>
+                    <td class="">
                         <h2> SZAMOJÉD </h2>
                         <br>
                         <img src="https://magazin.petissimo.hu/media/cache/hdm/uploads/cropped/samoyed_Csalad_crop_60bdeaa607b86.jpeg"></img>
