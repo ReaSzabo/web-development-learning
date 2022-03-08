@@ -8,9 +8,9 @@
         - font-weight
         - padding
         - background image
+        - div - container
     next class:
         - margin
-        - div - container
 -->
 
 <!--
@@ -126,6 +126,16 @@
 
 -->
 
+<!--
+    #### DIV ####
+    Szekciók, csoportok létrehozására használjuk
+-->
+
+<!--
+    #### MARGIN ####
+    Olyan, mint a padding, csak nem befelé, hanem kifelé.
+-->
+
 
 <!DOCTYPE html>
     <head>
@@ -166,6 +176,12 @@
             td {
                 padding: 30px;
             }
+            .kenyer-block {
+                background-color: white;
+                font-size: 20px;
+                padding: 30px;
+                margin-left: 100px;
+            }
         </style>
     </head>
     <body>
@@ -194,6 +210,15 @@
         <p>Sima bekezdés</p>
         <p class="beles">Béléses bekezdés</p>
         <p class="nagy-beles">NAGY béléses bekezdés</p>
+
+        <div class="kenyer-block">
+            <h1>Kenyerek</h1>
+            <p>Barna kenyér</p>
+            <p>Fekete kenyér</p>
+            <p>Fehér kenyér</p>
+            <p>Magvas kenyér</p>
+            <p>Penészes kenyér</p>
+        </div>
 
         <table>
             <tbody>
