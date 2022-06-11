@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+td {
+    padding: 40px;
+    vertical-align: top;
+}
+
+.first {
+    color: #9a35a0;
+}
+
+.second {
+    color: #b23bba;
+}
+
+.third {
+    color: #c53fce;
+}
+
+.fourth {
+    color: #d844e2;
+}
+
+.fifth {
+    color: #ec4af7;
+}
