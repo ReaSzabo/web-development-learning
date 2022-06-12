@@ -1,0 +1,319 @@
+<!--
+    TOPICS:
+        - DOCTYPE
+        - UTF8
+        - bold
+        - font-size
+        - font-style
+        - font-weight
+        - padding
+        - background image
+        - div - container
+    next class:
+        - margin
+-->
+
+<!--
+    ####### DOCTYPE #######
+    A HTML documentum elejére odatettük, hogy !DOCTYPE.
+    Mire jó ez? - A böngészőket tájékoztatja arról, hogy a legújabb HTML nyelvet akarjuk használni, azaz HTML5-t.
+    Elhagyható? - Szerintem igen, mert csak alap HTML feature-öket használunk, a HTML5-ös újításokat nem.
+    A szakirodalom egyébként azt mondja, hogy ne hagyjuk ki, mert akkor néhány HTML5-ös újítás nem fog látszódni.
+    Ez volt eddig az első sorunk:<html>
+    Ez lett most:<!DOCTYPE html>
+-->
+
+<!--
+    ####### UTF8 #######
+    Régen egy karakter 7 bit volt.
+    Egy bitnek lét lehetséges állapota létezik 0 vagy 1.
+    Szóval van 7 bitünk, ami 7 db "0" vagy "1": 0000000.
+    Kitalálták, hogy 0000000 legyen a kis "a" betű.
+    Akkor legyen a 0000001 a kis "b" betű.
+    Akkor legyen a 0000010 a kis "c" betű.
+    128 ilyen kombináció létezik, mert 7 "hely" van egy bájtban és minden helyre 2 lehetőség jut. (2 a hetediken = 128).
+    Ezt nevezzük ASCII (eszki) kódolásnak. (https://hu.wikipedia.org/wiki/ASCII)
+
+    Mi a baj?
+    Ebbe a 128 kombincióba belefértek a számok, írásjelek és az angol ábécé kis és nagybetűk, de a különböző nyelvek betűi már nem.
+    Ekkor elkezdtek más karakterkódolási szabványokat bevezetni egymással párhuzamosan, ezért a weblapoknál, szöveges dokumentumoknál, 
+    táblázatoknál el kellett dönteni, ki melyik kódolást szeretné használni.
+    Pl. a magyar nyelvhez ez a szabvány illett: ISO/IEC 8859-2
+    Ezeket a nyelveket foglalta magába ez a kódolás: bosnyák, cseh, horvát, lengyel, magyar, román, szerb (a latinbetűs írásmóddal), 
+    szerbhorvát, szlovák, szlovén.
+    Példa a karakterkódolásban lévő speciális betűkre:  	
+    Ă 	Ä 	Ĺ 	Ć 	Ç 	Č 	É 	Ę 	Ë 	Ě 	Í 	Î 	Ď
+ 	Đ 	Ń 	Ň 	Ó 	Ô 	Ő 	Ö 	× 	Ř 	Ů 	Ú 	Ű 	Ü 	Ý 	Ţ 	ß
+ 	ŕ 	á 	â 	ă 	ä 	ĺ 	ć 	ç 	č 	é 	ę 	ë 	ě 	í 	î 	ď
+ 	đ 	ń 	ň 	ó 	ô 	ő 	ö 	÷ 	ř 	ů 	ú 	ű 	ü 	ý 	ţ
+    (https://hu.wikipedia.org/wiki/ISO/IEC_8859-2)
+
+    Itt az lett a probléma, hogy a karakterkódolások ütköztek. 
+    Ha nem jól volt beállítva, akkor nem jó karaktereket látott a felhasználó.
+
+    És jött a megoldás.
+    A mindent felülíró új szabvány lett az UTF-8.
+    Mindenki ezt kezdte használni.
+    Miért? Azért mert nem csak 7 biten tárol adatokat, hanem 21-en. 2 a huszonegyediken kombináció hozható ki 21 bitből,
+    azaz több mint 2 millió karakternek van hely. Ezért van az, hogy már szinte bármit beletesznek a karakterkódolásba.
+    pl, Kínai, cirill, görög, arab, cherokee betűk, különleges matematikai karakterek, és minden emoji. 😀
+    (https://hu.wikipedia.org/wiki/UTF-8)
+
+    Mi azt akarjuk, hogy az UTF-8 kódolás érvényesüljön a weboldalunkon, ezért ezt jelöljük a head-ben egy ún. meta tag-ben.
+    Ezt tesszük a headbe:<meta charset="utf-8"/>
+
+
+    Kiegészítés: 
+    Valójában a 0000000 ASCII kód nem az "a" betűt jelöli, csak az egyszerű magyarázat kedvéért változtattam meg. 
+    Az "1100001" jelöli az "a" karaktert.
+
+-->
+
+<!--
+    ###### BOLD ######
+    A h1, h2, h3 header-ek (fejlécek, címsorok), alapból félkövérek.
+    Azt már tanultuk, hogy a css stílussal meg tudjuk adni, hogy valami félkövér legyen.
+    font-weight: bold;
+
+    De mi van, ha mondjuk csak egy szót akarunk félkövérré tenni?
+    Erre több megoldás is létezik.
+    A legegyszerűbb a<b>tag.
+    Itt csak a "szó" szó lesz félkövér:<p>Ez a<b>szó</b>legyen félkövér.</p>
+-->
+
+<!--
+    ###### FONT SIZE ######
+    Sosem láttam még ilyet, de az érettségi feladat azt kérte, hogy a font-size legyen small.
+    Tényleg van ilyen, de nem túl gyakori, mivel még sosem láttam. :D
+    Mindenesetben tartsuk észben, mert előfordulhat ilyen.
+-->
+
+<!--
+    ###### ITALIC ######
+    Magyarul dőlt stílus.
+    Itt is két lehetőség létezik a megvalósításra.
+    1. CSS 
+    font-style: italic;
+    2.<i>tag
+   <p>Mi a jó ég az a<i>Nyerere</i>?</p>
+-->
+
+<!--
+    ###### PADDING ######
+    Bélés a HTML elementen belül.
+    Lényegében hagy egy meghatározott peremet a körvonalon belül és csak azon belül kezdi el írni a tartalmat (pl. szöveget).
+    
+    A padding egy CSS attribútum.
+    Megadhatjuk olyan egyszerűen úgy, hogy minden oldalán legyen bélés.
+    padding: 10px;
+
+    Vagy megadhatjuk oldalanként:
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+-->
+
+<!--
+    ####### BACKGROUND IMAGE ##########
+    Háttérképet általában a body-ban állítunk be.
+
+    A CSS attribute így néz ki:
+    background-image: url("hatter.png");
+
+    Vagy ha online adjuk meg az URL-t akkor:
+    background-image: url("https://www.google.com/kep.jpeg")
+
+-->
+
+<!--
+    #### DIV ####
+    Szekciók, csoportok létrehozására használjuk.
+-->
+
+<!--
+    #### MARGIN ####
+    Olyan, mint a padding, csak nem befelé, hanem kifelé.
+-->
+
+
+<!DOCTYPE html>
+
+<head>
+    <title>Lesson 7</title>
+    <meta charset="utf-8" />
+    <style>
+        body {
+            background-image: url("https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+        }
+
+        img {
+            width: 50%;
+        }
+
+        .bold-font {
+            font-weight: bold;
+        }
+
+        .bigger-font {
+            font-size: large;
+        }
+
+        .small-font {
+            font-size: small;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        p {
+            background-color: lightblue;
+            color: black;
+        }
+
+        .padded {
+            padding: 10px;
+        }
+
+        .very-padded {
+            padding-top: 30px;
+            padding-bottom: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        td {
+            padding: 30px;
+        }
+
+        .bread-block {
+            background-color: white;
+            font-size: 20px;
+            padding: 30px;
+            margin-left: 100px;
+        }
+
+        .bakery-block {
+            background-color: red;
+            padding: 30px;
+            display: flex;
+            /* vízszintesen helyezi el a tag-eket egymás után */
+            justify-content: center;
+            /* horizontálisan középre igazítja a tartalmat */
+        }
+
+        .pizza-block {
+            background-color: beige;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Bold</h1>
+
+    <p class="bold-font">My bold line</p>
+
+    <p>My<b>bold</b>line</p>
+
+    <br>
+
+    <p class="bigger-font">Big font</p>
+    <p class="small-font">Small font</p>
+
+    <br>
+
+    <p>Last word<i>italic.</i></p>
+    <p class="italic">Italic line</p>
+
+    <br>
+    <p>Normie line</p>
+    <p class="padded">padded paragraph</p>
+    <p class="very-padded">very padded paragraph</p>
+
+    <div class="bread-block">
+        <h1>Breads</h1>
+        <p>Brown bread</p>
+        <p>Low-carb bread</p>
+        <p>White bread</p>
+        <p>Sandwich</p>
+    </div>
+    <div class="bakery-block">
+        <div class="pizza-block">
+            <h2>Pizza</h2>
+            <p>Hawaii pizza</p>
+            <p>Ham pizza</p>
+            <p>Marghareta pizza</p>
+        </div>
+    </div>
+
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    <h2>SZAMOJÉD</h2>
+                    <br>
+                    <img
+                        src="https://magazin.petissimo.hu/media/cache/hdm/uploads/cropped/samoyed_Csalad_crop_60bdeaa607b86.jpeg"></img>
+                    <br>
+                    <p>A szamojéd (samoyed) kutyafajta az őshazájában, Szibériában, a Jenyiszej és az Ob folyó közötti
+                        területen
+                        élő szamojéd népcsoportról kapta nevét, az ottani emberek mindenes munkakutyája volt. Használták
+                        rénszarvasterelésre, szánhúzásra
+                        és vadászatra egyaránt - a szamojédek nagy becsben tartották kutyáikat, hiszen a mindennapi
+                        túlélés nélkülük lehetetlen lett volna számukra.
+                        A mai szamojédek rendkívül tetszetős küllemű és kedves karakterű kutyák, elsősorban kedvencként
+                        tartják őket, de kiválóan alkalmasak különböző
+                        kutyás sportokra is (szánhúzás, terelés, agility stb.). Általában könnyebben kezelhetők, mint a
+                        többi szánhúzó fajta, de határozott, következetes
+                        gazdára van szükségük.</p>
+                    <a href="https://hu.wikipedia.org/wiki/Szamoj%C3%A9d_(kutyafajta)">Kattints ide, és tudj meg többet
+                        a szamojéd fajtáról!</a>
+                    <br>
+                </td>
+
+                <td>
+                    <h2>SZIBÉRIAI HUSKY</h2>
+                    <br>
+                    <img src="https://i.ytimg.com/vi/KJkRYSUF2Xs/maxresdefault.jpg"></img>
+                    <br>
+                    <p>A szibériai husky a munkakutyák (szánhúzás, teherhordás, vadászat) közé tartozik, közepes
+                        méretű, Kelet-Szibériából származik.
+                        Onnan elterjedt Alaszkában és Kanadában is. Szőrzete vastag, szagtalan, évente kétszer igen
+                        erősen vedlik, színe ordas vagy szürkés,
+                        nemritkán ezüstös színű. Mérsékelten tömör felépítésű és dús szőrzetű teste, álló füle és
+                        bozontos farka is északi származásra utal.
+                        Jellegzetes testtartása meglehetősen könnyed. Eredeti funkciója szerint hámban kiválóan
+                        dolgozik, könnyű terhet közepes sebességgel,
+                        hatalmas távolságokra elhúz. Testalkata és formája híven tükrözi eredendő erejét, sebességét,
+                        állóképességét. Kissé ferde szemeinek élénk
+                        és barátságos kifejezése a jó társ alkalmazkodó tulajdonságaira utal. Tenyésztői igen nagyra
+                        tartják.</p>
+                    <a href="https://hu.wikipedia.org/wiki/Szib%C3%A9riai_husky">Kattints ide, és tudj meg többet a
+                        szibériai husky fajtáról!</a>
+                    <br>
+                </td>
+
+                <td>
+                    <h2>TÖRPE USZKÁR</h2>
+                    <br>
+                    <img src="http://addel.ro/oc-content/uploads/34/7091.jpg"></img>
+                    <br>
+                    <p>Az uszkár FCI által elismert, francia kutyafajta. Köznyelvben pudlinak is nevezik. Az uszkár
+                        francia eredetű. A kutatásokból az szűrhető le,
+                        hogy valószínűleg vadászkutyák és bozontos szőrű juhászkutyák keverékéből alakult ki.
+                        Franciaország az őshazája. Az eredetileg nagy termetű uszkárt
+                        vízből való apportírozásra[Mj. 1] és vadászatra tenyésztették ki, de voltak apróbb változatai
+                        is, ezek az európai nemesi családok kedvelt
+                        háziállataik lettek.</p>
+                    <a href="https://hu.wikipedia.org/wiki/Uszk%C3%A1r">Kattints ide, és tudj meg többet a törpe uszkár
+                        fajtáról!</a>
+                    <br>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
