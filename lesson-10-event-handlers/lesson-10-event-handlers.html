@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<head>
+    <title> Lesson #10 </title>
+    <meta charset="utf-8" />
+    <script>
+        var counter = 0;
+
+        function sayHello() {
+            alert("Hello");
+        }
+
+        function logHello() {
+            console.log("Hello");
+        }
+
+        function logBye() {
+            console.log("Bye");
+        }
+
+        function increaseCounter() {
+            counter++;
+            console.log(counter);
+        }
+    </script>
+    <style>
+        body {
+            text-align: center;
+            padding: 50px;
+            background-color: lightgrey;
+        }
+
+        button {
+            width: 200px;
+            height: 50px;
+            margin: 5px;
+            color: white;
+            background-color: black;
+            border: 2x solid white;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button onclick="sayHello()"> Say Hello button </button> <br>
+    <button onclick="logHello()"> Log Hello button </button> <br>
+    <button onclick="logBye()"> Log Bye button </button> <br>
+    <button onclick="increaseCounter()"> Log Counter</button>
+
+</body>
+
+</html>
