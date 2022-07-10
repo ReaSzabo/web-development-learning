@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<head>
+    <title> Lesson 11 </title>
+    <meta charset="utf-8" />
+    <script>
+        function welcomeUser() {
+            // get the name from the input field
+            var username = document.getElementById("name").value;
+            // set the name on the h1 tag
+            document.getElementById("welcome-text").innerHTML = "Hello " + username;
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Input tags are parts are used to get data from the user -->
+    <label>Username:</label>
+    <input id="name"></input> <br><br>
+    <button onclick="welcomeUser()">Welcome</button>
+
+    <h1 id="welcome-text"></h1>
+</body>
+
+</html>
